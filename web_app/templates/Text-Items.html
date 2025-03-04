@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1> Items List</h1>
+    <ul>
+        {% for Textitem in TextItems %}
+            <li>
+            {{ TextItem.title }}: {% if TextItem.completed %}Completed{% else %} Not Completed {% endif %}
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}
+
