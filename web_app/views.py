@@ -8,3 +8,7 @@ def home(request):
 def TextItems(request):
     items = TextItem.objects.all()
     return render(request, 'Text-Items.html', {'TextItems': items})
+
+
+def profile(request):
+    return render(request, 'profile.html')

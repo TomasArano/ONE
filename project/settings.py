@@ -127,15 +127,21 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+''' AllAuth Configuration'''
+
 AUTHENTICATION_BACKENDS = (
     'django.contrib.auth.backends.ModelBackend',
+    'allauth.account.auth_backends.AuthenticationBackend',
 )
 
 SOCIALACCOUNT_PROVIDERS = {}
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend' #testing: email will be printed to console
 
-# AllAuth Configuration
+
 LOGIN_REDIRECT_URL = '/'  # Redirect to homepage after login/signup
 
 ACCOUNT_LOGOUT_REDIRECT_URL = '/'  # Redirect to homepage after logout
+
+ACCOUNT_EMAIL_REQUIRED = False  # Email is not required for signup
+ACCOUNT_EMAIL_REQUIRED = False  # Email verification is not required
